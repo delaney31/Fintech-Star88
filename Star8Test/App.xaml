@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Star8Test.App">
+  <Application.Resources> 
+           <ResourceDictionary> 
+            <Thickness x:Key="SmallTopMargin">0,0,0,0</Thickness> 
+
+            <Color x:Key="ThemeBackgroundDetailColor">#F0F0F0</Color>
+            <Color x:Key="ThemeTextColor">#000000</Color>
+            <Color x:Key="NavigationBarColor">#1D1848</Color>
+            <Color x:Key="ContentBackgroundColor">#4A63CB</Color>
+            <Color x:Key="CircleColor">#4A63CB</Color>
+            <Color x:Key="ButtonEditBackgroundColor">#CAA526</Color>
+            <Color x:Key="BoxStyleViewColor">#313a7d</Color>
+            
+            <Style TargetType="BoxView" x:Key="BoxViewStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource BoxStyleViewColor}"/>
+            </Style>
+            <Style TargetType="StackLayout" x:Key="HeaderViewStyle">
+                <Setter Property="BackgroundColor" 
+                        Value="{StaticResource NavigationBarColor}"/>
+            </Style>
+            <Style TargetType="Label" x:Key="LabelStyle">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style TargetType="StackLayout" x:Key="ContentViewStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource ContentBackgroundColor}"/>
+            </Style>
+            <Style TargetType="Grid" x:Key="GridViewStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource ContentBackgroundColor}"/>
+                <Setter Property="Margin" Value="{StaticResource SmallTopMargin}"/>
+            </Style>
+             <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource NavigationBarColor}" />
+                <Setter Property="WidthRequest" Value="148"/>
+                <Setter Property="HeightRequest" Value="33"/>
+                <Setter Property="BorderColor" Value="{StaticResource NavigationBarColor}" />
+            </Style>
+            <Style TargetType="Button" x:Key="ButtonEditStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonEditBackgroundColor}" />
+                <Setter Property="WidthRequest" Value="160"/>
+                <Setter Property="HeightRequest" Value="33"/>
+                <Setter Property="BorderColor" Value="{StaticResource ButtonEditBackgroundColor}" />
+            </Style>  
+            <Style TargetType="StackLayout" x:Key="DetailViewStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource CircleColor}" />
+                
+            </Style>  
+            <!-- TODO: Use TemplateBindings for text/icons/commands etc -->
+            <ControlTemplate x:Key="HeaderFooterControlTemplate">
+                <StackLayout Style="{StaticResource HeaderViewStyle}">
+                    <!-- Header-->
+                    <StackLayout VerticalOptions="Start"  
+                                 HorizontalOptions="CenterAndExpand"
+                                 Margin="20,0,0,0" >
+                        <StackLayout Orientation="Horizontal" 
+                                     HorizontalOptions="CenterAndExpand">
+                                <StackLayout VerticalOptions="Center">
+                                    <Image Source="user-1" Margin="10,15,20,0"/>
+                                     <Label TextColor="White" 
+                                            FontSize="Micro"
+                                            Margin="0,7,0,0"
+                                            Text="Amy Kimberly"/>
+                                </StackLayout>
+                                <Image VerticalOptions="Center"
+                                       Source="user-connect-icon" 
+                                       Margin="10,0,10,0"/>  
+                                <StackLayout VerticalOptions="Center">
+                                    <Image Source="user-3" Margin="10,10,20,0"/>
+                                     <Label TextColor="White" 
+                                   FontSize="Micro" 
+                                   Margin="15,0,0,0"
+                                   Text="Gary Gonzales"/>
+                                </StackLayout>
+                        </StackLayout> 
+                    </StackLayout>
+
+                    <!-- Content  -->
+                    <StackLayout VerticalOptions="StartAndExpand">
+                        <ContentPresenter   />
+                    </StackLayout>
+                     <!-- Footer -->
+                   <!-- <BoxView Style="{StaticResource HorizontalSeparatorBoxViewStyle}" />-->
+
+                   
+                </StackLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
